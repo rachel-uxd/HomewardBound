@@ -283,10 +283,7 @@ export function AttendanceScreen() {
           <MailPickupModal
             open={activeModal === "mail"}
             onClose={() => setActiveModal(null)}
-            onConfirm={(ids) => showToast(`${ids.length} item(s) released to ${selected.name}`)}
-            clientName={selected.name}
-            hasAgreement={selected.hasMailAgreement}
-            heldItems={[]}
+            onSave={(_client, items) => showToast(`${items.length} item(s) released to ${selected.name}`)}
           />
           <TaskModal
             open={activeModal === "newTask"}
